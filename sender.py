@@ -1,12 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-    sender
-    ~~~~~~
-
-    Python SMTP Client for Humans.
-
-    :copyright: (c) 2016 by Shipeng Feng.
-    :license: BSD, see LICENSE for more details.
+# -*- coding: utf-8 -*- 
+""" sender ~~~~~~ 
+Python SMTP Client for Humans.  
+:copyright: (c) 2016 by Shipeng Feng. 
+ :license: BSD, see LICENSE for more details.
 """
 
 __version__ = '0.3'
@@ -429,3 +425,7 @@ def process_address(address, encoding='utf-8'):
 
 def process_addresses(addresses, encoding='utf-8'):
     return map(lambda e: process_address(e, encoding), addresses)
+
+mail = Mail()
+
+mail.send_message("Hello",fromaddr = "from@example.com",to = "to@example.com",body="PONCE TROLL")
