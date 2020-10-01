@@ -113,9 +113,9 @@ class Connection(object):
 
     def __enter__(self):
         if self.mail.use_ssl:
-            server = smtplib.SMTP_SSL("localhost", 2525)
+            server = smtplib.SMTP_SSL("172.17.0.1", 2525)
         else:
-            server = smtplib.SMTP("localhost", 2525)
+            server = smtplib.SMTP("172.17.0.1", 2525)
 
         # Set the debug output level
         if self.mail.debug_level is not None:
@@ -429,4 +429,3 @@ def process_addresses(addresses, encoding='utf-8'):
 mail = Mail()
 
 mail.send_message("Hello",fromaddr = "from@example.com",to = "to@example.com",body="PONCE TROLL")
-print("Mensaje enviado a ",smtp.mail.host)
