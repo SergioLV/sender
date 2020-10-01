@@ -429,3 +429,4 @@ def process_addresses(addresses, encoding='utf-8'):
 mail = Mail()
 
 mail.send_message("Hello",fromaddr = "from@example.com",to = "to@example.com",body="PONCE TROLL")
+print("Mensaje enviado a ",smtp.mail.host)
