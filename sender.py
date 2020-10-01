@@ -429,3 +429,17 @@ def process_addresses(addresses, encoding='utf-8'):
 mail = Mail()
 
 mail.send_message("Hello",fromaddr = "from@example.com",to = "to@example.com",body="PONCE TROLL")
+msg = Message()
+msg = Message("msg subject")
+msg.fromaddr = ("Admin", "admin@example.com")
+msg.to = "to@example.com"
+msg.body = "this is a msg plain text body"
+msg.html = "<b>Hello</b>"
+msg.cc = "cc@example.com"
+msg.bcc = ["bcc01@example.com", "bcc02@example.com"]
+msg.reply_to = "reply@example.com"
+msg.date = time.time()
+msg.charset = "utf-8"
+msg.extra_headers = {}
+msg.mail_options = []
+msg.rcpt_options = []
