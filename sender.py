@@ -117,9 +117,9 @@ class Connection(object):
 
     def __enter__(self):
         if self.mail.use_ssl:
-            server = smtplib.SMTP_SSL(self.mail.host, self.mail.port)
+            server = smtplib.SMTP_SSL("localhost", 2525)
         else:
-            server = smtplib.SMTP(self.mail.host, self.mail.port)
+            server = smtplib.SMTP("localhost", 2525)
 
         # Set the debug output level
         if self.mail.debug_level is not None:
