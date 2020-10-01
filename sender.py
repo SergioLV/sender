@@ -429,7 +429,11 @@ def process_addresses(addresses, encoding='utf-8'):
 mail = Mail()
 
 mail.send_message("Hello",fromaddr = "from@example.com",to = "to@example.com",body="PONCE TROLL")
-msg = Message()
+msg = Message("Hello", fromaddr=("Name", "name@example.com"))
+with open("foto4.jpg",'rb') as f:
+    attachment = Attachment("foto4.jpg", "image/jpeg", f.read())
+
+msg.attach(attachment)
 msg = Message("msg subject")
 msg.fromaddr = ("Admin", "admin@example.com")
 msg.to = "to@example.com"
@@ -443,3 +447,5 @@ msg.charset = "utf-8"
 msg.extra_headers = {}
 msg.mail_options = []
 msg.rcpt_options = []
+
+mail.send(msg)
